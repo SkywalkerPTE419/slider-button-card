@@ -330,7 +330,9 @@ export class SliderButtonCard extends LitElement implements LovelaceCard {
     if (this.action) {
       clearTimeout(this.actionTimeout);
       this.actionTimeout = setTimeout(()=> {
-        this.action.classList.remove('loading');
+        if (this.action) {
+          this.action.classList.remove('loading');
+        }
       }, 750)
 
     }
